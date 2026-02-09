@@ -11,7 +11,7 @@ A análise foi desenvolvida em um cenário de negócio fictício, simulando um b
 - Analisar o desempenho de vendas por categoria de produto  
 - Avaliar o comportamento de compra dos clientes  
 - Identificar padrões no volume de pedidos ao longo do tempo  
-- Praticar consultas SQL fundamentais aplicadas a um contexto de negócio  
+- Aplicar consultas SQL fundamentais em um contexto de negócio
 
 ---
 
@@ -65,10 +65,11 @@ Os principais resultados e interpretações de negócio desta análise estão do
 ---
 
 ## 📂 Estrutura do Repositório
-sql-sales-analysis
+sql-sales-analysis/
 ├── schema.sql
 ├── data.sql
 ├── queries.sql
+├── RESULTS.md
 └── README.md
 
 ---
