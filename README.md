@@ -45,6 +45,11 @@ O banco de dados é composto pelas seguintes tabelas:
 - Alguns clientes apresentam maior recorrência de compras  
 - O volume de pedidos varia ao longo dos meses analisados, indicando padrões temporais de consumo  
 
+## 📄 Resultados da Análise
+Os principais resultados e interpretações de negócio desta análise estão documentados no arquivo abaixo:
+
+👉 `RESULTS.md`
+
 ---
 
 ## 📂 Estrutura do Repositório
