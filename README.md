@@ -31,19 +31,31 @@ O banco de dados é composto pelas seguintes tabelas:
 
 ---
 
-## 🔍 Principais Análises
-- Faturamento total por categoria de produto  
+## 📊 Principais Análises
+- Faturamento por categoria de produto  
 - Total gasto por cliente  
-- Quantidade de pedidos por período  
-- Distribuição de clientes por cidade  
-- Produtos mais vendidos em quantidade  
+- Quantidade de pedidos ao longo do tempo  
+- Consolidação de dados de clientes, pedidos e produtos por meio de JOINs
 
 ---
 
-## 💡 Principais Insights
+## 🔍 Metodologia
+A análise foi realizada por meio de consultas SQL progressivas, incluindo:
+- Exploração inicial das tabelas para entendimento da estrutura dos dados  
+- Aplicação de filtros, agregações e ordenações  
+- Utilização de JOINs para consolidação das informações de negócio  
+
+> Todas as consultas SQL foram testadas em ambiente SQLite e executam corretamente.
+
+
+---
+
+## 🧠 Insights
 - A categoria **Eletrônicos** concentra o maior faturamento total  
-- Alguns clientes apresentam maior recorrência de compras  
-- O volume de pedidos varia ao longo dos meses analisados, indicando padrões temporais de consumo  
+- Alguns clientes apresentam maior recorrência e volume de gastos  
+- O volume de pedidos varia ao longo do tempo, indicando padrões temporais
+
+---
 
 ## 📄 Resultados da Análise
 Os principais resultados e interpretações de negócio desta análise estão documentados no arquivo abaixo:
