@@ -48,7 +48,7 @@ O banco de dados é composto pelas seguintes tabelas:
 ## 📄 Resultados da Análise
 Os principais resultados e interpretações de negócio desta análise estão documentados no arquivo abaixo:
 
-👉 `RESULTS.md`
+👉 [Acessar resultados da análise](RESULTS.md)
 
 ---
 
