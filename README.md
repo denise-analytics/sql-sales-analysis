@@ -1,87 +1,182 @@
-# 📊 SQL Sales Analysis
+# Análise de Vendas com SQL
 
-## 📌 Visão Geral
-Este projeto apresenta uma análise de dados de vendas utilizando SQL, com foco em consultas fundamentais como `SELECT`, `WHERE`, `GROUP BY` e `JOIN`.
+## Visão geral
 
-A análise foi desenvolvida em um cenário de negócio fictício, simulando um banco de dados de vendas para identificação de padrões de consumo, desempenho de produtos e comportamento de clientes.
+Este projeto apresenta uma análise de vendas desenvolvida em SQL a partir de um banco de dados simulado.
 
----
+As consultas exploram informações sobre clientes, produtos, pedidos e itens vendidos para identificar o desempenho das categorias, a concentração de receita entre clientes e o volume mensal de pedidos.
 
-## 🎯 Objetivo do Projeto
-- Analisar o desempenho de vendas por categoria de produto  
-- Avaliar o comportamento de compra dos clientes  
-- Identificar padrões no volume de pedidos ao longo do tempo  
-- Aplicar consultas SQL fundamentais em um contexto de negócio
+O projeto foi desenvolvido para demonstrar fundamentos de SQL aplicados a um contexto de negócio.
 
----
+## Objetivos
 
-## 🗂️ Estrutura do Banco de Dados
-O banco de dados é composto pelas seguintes tabelas:
+- Explorar a estrutura de um banco de dados relacional.
+- Aplicar filtros e ordenações.
+- Criar agregações com `COUNT` e `SUM`.
+- Relacionar tabelas por meio de `JOIN`.
+- Calcular o faturamento por categoria.
+- Identificar os clientes com maior valor acumulado.
+- Analisar o volume mensal de pedidos.
+- Transformar resultados SQL em interpretações de negócio.
 
-- **customers**: informações dos clientes (nome, cidade, estado)  
-- **products**: catálogo de produtos, categorias e preços  
-- **orders**: registros de pedidos realizados  
-- **order_items**: itens associados a cada pedido, com quantidades  
+## Estrutura do banco de dados
 
----
+O banco contém quatro tabelas:
 
-## 🛠️ Tecnologias Utilizadas
-- SQL  
-- SQLite  
+| Tabela | Conteúdo |
+|---|---|
+| `customers` | Identificação e localização dos clientes |
+| `products` | Produtos, categorias e preços |
+| `orders` | Pedidos, clientes e datas |
+| `order_items` | Produtos e quantidades de cada pedido |
 
----
+```mermaid
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : realiza
+    ORDERS ||--|{ ORDER_ITEMS : possui
+    PRODUCTS ||--o{ ORDER_ITEMS : compoe
+```
 
-## 📊 Principais Análises
-- Faturamento por categoria de produto  
-- Total gasto por cliente  
-- Quantidade de pedidos ao longo do tempo  
-- Consolidação de dados de clientes, pedidos e produtos por meio de JOINs
+## Dados
 
----
+A base simulada contém:
 
-## 🔍 Metodologia
-A análise foi realizada por meio de consultas SQL progressivas, incluindo:
-- Exploração inicial das tabelas para entendimento da estrutura dos dados  
-- Aplicação de filtros, agregações e ordenações  
-- Utilização de JOINs para consolidação das informações de negócio  
+- 4 clientes;
+- 4 produtos;
+- 4 pedidos;
+- 5 itens de pedido;
+- registros referentes a janeiro e fevereiro de 2023.
 
-> Todas as consultas SQL foram testadas em ambiente SQLite e executam corretamente.
+Os dados foram criados diretamente pelo script `data.sql`.
 
+## Consultas desenvolvidas
 
----
+### Exploração inicial
 
-## 🧠 Insights
-- A categoria **Eletrônicos** concentra o maior faturamento total  
-- Alguns clientes apresentam maior recorrência e volume de gastos  
-- O volume de pedidos varia ao longo do tempo, indicando padrões temporais
+- visualização das tabelas;
+- conferência dos registros disponíveis;
+- inspeção das informações de clientes, produtos e pedidos.
 
----
+### Filtros
 
-## 📄 Resultados da Análise
-Os principais resultados e interpretações de negócio desta análise estão documentados no arquivo abaixo:
+- clientes localizados em São Paulo;
+- produtos da categoria Eletrônicos;
+- produtos com preço superior a R$ 1.000,00.
 
-👉 [Acessar resultados da análise](RESULTS.md)
+### Agregações
 
----
+- quantidade de clientes por cidade;
+- total de pedidos por cliente;
+- quantidade total vendida por produto.
 
-## 📂 Estrutura do Repositório
+### Relacionamentos
+
+- pedidos com identificação dos clientes;
+- itens dos pedidos com nomes dos produtos;
+- consolidação de clientes, pedidos, itens e produtos.
+
+### Análises de negócio
+
+- faturamento por categoria;
+- valor total gasto por cliente;
+- quantidade de pedidos por mês.
+
+## Principais resultados
+
+| Indicador | Resultado |
+|---|---:|
+| Faturamento total | R$ 7.900,00 |
+| Categoria com maior faturamento | Eletrônicos — R$ 6.000,00 |
+| Participação de Eletrônicos | 75,95% |
+| Cliente com maior valor acumulado | Ana Silva — R$ 4.800,00 |
+| Concentração nos dois maiores clientes | 92,41% |
+| Pedidos em janeiro de 2023 | 2 |
+| Pedidos em fevereiro de 2023 | 2 |
+
+## Insights
+
+A categoria de Eletrônicos concentrou **75,95% do faturamento total**, representando a principal categoria de receita da base.
+
+Ana Silva apresentou o maior valor acumulado e foi a única cliente com mais de um pedido. Juntos, Ana Silva e Bruno Costa responderam por **92,41% do valor vendido**.
+
+Daniel Souza não realizou pedidos no período e poderia ser considerado em uma ação de ativação de clientes.
+
+O volume permaneceu em dois pedidos por mês. Como a base cobre apenas janeiro e fevereiro de 2023, não é possível identificar tendências ou sazonalidade.
+
+## Tecnologias utilizadas
+
+- SQL
+- SQLite
+- DBeaver
+- Git e GitHub
+
+## Estrutura do repositório
+
+```text
 sql-sales-analysis/
-├── schema.sql
-├── data.sql
-├── queries.sql
-├── RESULTS.md
+├── sql/
+│   ├── schema.sql
+│   ├── data.sql
+│   └── queries.sql
+├── docs/
+│   └── results.md
+├── .gitignore
 └── README.md
+```
 
----
+## Como executar
 
-## ✅ Status
-Projeto concluído, com foco em prática de SQL aplicado a análise de dados e contexto de negócio.
+### Opção 1 — SQLite
 
----
+1. Clone o repositório:
 
-## 👩‍💻 Autora
+```bash
+git clone https://github.com/denise-analytics/sql-sales-analysis.git
+```
+
+2. Acesse a pasta:
+
+```bash
+cd sql-sales-analysis
+```
+
+3. Crie e abra o banco:
+
+```bash
+sqlite3 sales.db
+```
+
+4. Execute os scripts na seguinte ordem:
+
+```sql
+.read sql/schema.sql
+.read sql/data.sql
+.read sql/queries.sql
+```
+
+### Opção 2 — DBeaver
+
+1. Crie uma conexão SQLite.
+2. Crie um banco de dados vazio.
+3. Abra e execute `sql/schema.sql`.
+4. Execute `sql/data.sql`.
+5. Execute as consultas de `sql/queries.sql`.
+
+## Resultados detalhados
+
+Os resultados e suas interpretações estão documentados em:
+
+[Resultados da análise](docs/results.md)
+
+## Limitações
+
+- A base é simulada e possui poucos registros.
+- O período analisado compreende apenas dois meses.
+- Não existem informações sobre custos, descontos ou margem de lucro.
+- O projeto demonstra fundamentos de SQL e não representa o comportamento de um mercado real.
+- A quantidade reduzida de observações impede análises de tendência ou sazonalidade.
+
+## Autora
+
 **Denise Duarte**  
-Analista de Dados Júnior | SQL | Análise de Dados  
-📬 Aberta a oportunidades na área de Dados
-
-
+Analista de Dados Júnior | Python | SQL | Excel | Power BI
